@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    font-family: 'Press Start 2P', monospace;
+    color: #fff;
+    overflow: hidden;
+    user-select: none;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ui {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+#score, #lives {
+    font-size: 12px;
+    color: #00ff00;
+    text-shadow: 2px 2px 0px #000;
+}
+
+#gameCanvas {
+    border: 3px solid #00ff00;
+    background: #000;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+    text-align: center;
+}
+
+.screen h1 {
+    font-size: 24px;
+    color: #00ff00;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0px #000;
+    animation: glitch 2s infinite;
+}
+
+.screen h2 {
+    font-size: 20px;
+    color: #ff0000;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0px #000;
+}
+
+.screen p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.instructions {
+    font-size: 10px !important;
+    color: #888 !important;
+    max-width: 300px;
+}
+
+button {
+    background: #00ff00;
+    border: 3px solid #fff;
+    color: #000;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14px;
+    padding: 15px 30px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #ffff00;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 100vw;
+        height: 80vh;
+        max-width: 400px;
+        max-height: 300px;
+    }
+    
+    .screen h1 {
+        font-size: 18px;
+    }
+    
+    .screen h2 {
+        font-size: 16px;
+    }
+    
+    .screen p {
+        font-size: 12px;
+    }
+    
+    button {
+        font-size: 12px;
+        padding: 12px 24px;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Dimensions - Retro Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <div id="ui">
+            <div id="score">LEVEL: <span id="levelNum">1</span></div>
+            <div id="lives">LIVES: <span id="livesNum">3</span></div>
+        </div>
+        
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div id="startScreen" class="screen">
+            <h1>PARALLEL DIMENSIONS</h1>
+            <p>PRESS START</p>
+            <button id="startBtn">START GAME</button>
+            <p class="instructions">
+                PC: Arrow Keys to move and jump<br>
+                Mobile: Swipe to move and jump
+            </p>
+        </div>
+        
+        <div id="gameOverScreen" class="screen hidden">
+            <h2>DIMENSION FAILURE</h2>
+            <p>Your characters failed to survive both worlds</p>
+            <button id="restartBtn">TRY AGAIN</button>
+        </div>
+        
+        <div id="victoryScreen" class="screen hidden">
+            <h2>YOU MASTERED BOTH WORLDS!</h2>
+            <p>Congratulations! You've completed level <span id="victoryLevel">1</span></p>
+            <button id="nextLevelBtn">NEXT LEVEL</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
